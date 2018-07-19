@@ -1,0 +1,19 @@
+<p>
+  There are {{favorites.totalquantity}} things that you favorited!
+</p>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">Item</th>
+      <th scope="col">Total Quantity</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let favoritesitem of favorites.items">
+      <th scope="row">{{favoritesitem.name}}</th>
+      <td>{{favoritesitem.totalquantity}}</td>
+    </tr>
+
+  </tbody>
+</table>
