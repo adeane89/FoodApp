@@ -7,12 +7,14 @@ import { MealComponent } from './meal/meal.component';
 
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { NavbarComponent } from './navbar/navbar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    MealComponent
+    MealComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
