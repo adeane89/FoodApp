@@ -13,23 +13,23 @@ export class MealComponent implements OnInit {
     favorites: FavoritesModel;
     @Input()
     meal: MealModel;
+
   constructor(private favoritesService: FavoritesService) { }
 
   ngOnInit() {
       this.favorites = this.favoritesService.favorites;
   }
+pushed: boolean = false;
 
     addToCart() {
 		let existingItem: FavoritesItemModel;
 		existingItem = this.favorites.items.find(x => x.mealid == this.meal.idMeal);
 
 		if(!existingItem) {
-			this.favorites.items.push({ mealid: this.meal.idMeal, name: this.meal.strMeal, quantity: 1})
+			this.favorites.items.push({ mealid: this.meal.idMeal, name: this.meal.strMeal, category: this.meal.strCategory, picture: this.meal.strMealThumb, quantity: 1});
+            this.favorites.totalquantity = this.favorites.totalquantity + 1;
 		} else {
-			existingItem.quantity = existingItem.quantity + 1;
-		}
-
-		this.favorites.totalquantity = this.favorites.totalquantity + 1;
+			existingItem.quantity = existingItem.quantity;
+		} this.pushed = true;
     }
-
 }

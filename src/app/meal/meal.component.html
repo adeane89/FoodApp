@@ -5,5 +5,5 @@
         <p class="card-text">Category: {{meal.strCategory}}</p>
         <p class="card-text">{{meal.strInstructions}}</p>
   </div>
-    <button class="btn btn-secondary" (click)="addToCart()">Add to Favs</button>
+    <button class="btn btn-secondary" *ngIf="!pushed" (click)="addToCart()">Add to Favs</button>
 </div>

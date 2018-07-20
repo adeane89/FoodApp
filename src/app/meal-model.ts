@@ -1,3 +1,4 @@
+import { AddRecipeModel } from './add-recipe-model';
 export class MealModel {
     idMeal: number;
     strMeal: string;
@@ -48,4 +49,5 @@ export class MealModel {
     strMeasure19: string;
     strMeasure20: string;
     strSource: string;
+    addRecipe?: AddRecipeModel[];
 }

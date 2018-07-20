@@ -6,13 +6,17 @@
   <thead>
     <tr>
       <th scope="col">Item</th>
-      <th scope="col">Total Quantity</th>
+        <th scope="col"></th>
+        <th scope="col">Category</th>
     </tr>
   </thead>
   <tbody>
     <tr *ngFor="let favoritesitem of favorites.items">
       <th scope="row">{{favoritesitem.name}}</th>
-      <td>{{favoritesitem.totalquantity}}</td>
+        <th scope="row"></th>
+        <th scope="row">{{favoritesitem.category}}</th>
+          <td></td>
+
     </tr>
 
   </tbody>

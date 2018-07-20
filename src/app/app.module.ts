@@ -11,11 +11,14 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { RouterModule, Routes } from '@angular/router';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { FavoritesComponent } from './favorites/favorites.component';
+import { FilterPipe } from './filter.pipe';
+import { AddRecipeComponent } from './add-recipe/add-recipe.component';
 
 const appRoutes: Routes= [
     {path: '', redirectTo: 'home', pathMatch: 'full'},
     {path: 'home', component: HomeComponent},
     {path: 'favorites', component: FavoritesComponent},
+    {path: 'addRecipe', component: AddRecipeComponent},
     { path: '**', component: NotFoundComponent }
 ];
 
@@ -26,7 +29,9 @@ const appRoutes: Routes= [
     MealComponent,
     NavbarComponent,
     NotFoundComponent,
-    FavoritesComponent
+    FavoritesComponent,
+    FilterPipe,
+    AddRecipeComponent
   ],
   imports: [
     BrowserModule,
