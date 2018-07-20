@@ -4,6 +4,8 @@ import { FavoritesModel } from '../favorites-model';
 import { FavoritesItemModel } from '../favorites-item-model';
 import { FavoritesService } from '../favorites.service';
 
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+
 @Component({
   selector: 'app-meal',
   templateUrl: './meal.component.html',
@@ -14,10 +16,14 @@ export class MealComponent implements OnInit {
     @Input()
     meal: MealModel;
 
-  constructor(private favoritesService: FavoritesService) { }
+  constructor(private httpClient: HttpClient, private favoritesService: FavoritesService) { }
 
   ngOnInit() {
       this.favorites = this.favoritesService.favorites;
+      console.log(this.meal.idMeal)
+      this.httpClient.get('https://www.themealdb.com/api/json/v1/1/lookup.php?i=' + this.meal.idMeal).subscribe(results =>{
+          this.meal = results.meals[0];
+      })
   }
 pushed: boolean = false;
 

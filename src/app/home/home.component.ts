@@ -24,23 +24,9 @@ export class HomeComponent implements OnInit {
     reloadMeals(){
         let id = this.route.snapshot.paramMap.get('id');
         if(id){
-            this.httpClient.get(
-            'https://www.themealdb.com/api/json/v1/1/filter.php?c=' + id
-                ).subscribe(
-          (results) => {
-              this.homeMeal = results.meals;
-              });
+            this.httpClient.get('https://www.themealdb.com/api/json/v1/1/filter.php?c=' + id).subscribe((results) => { this.homeMeal = results.meals; });
         } else {
-      this.httpClient.get<MealModel[]>(
-          './assets/meal.json'
-
-      ).subscribe(
-          (results) => {
-              this.homeMeal = results;
-
-
-          }
-      );
+            this.httpClient.get<MealModel[]>('./assets/meal.json').subscribe((results) => { this.homeMeal = results; });
         }
     }
 
@@ -48,13 +34,8 @@ export class HomeComponent implements OnInit {
 
       this.httpClient.get('https://www.themealdb.com/api/json/v1/1/categories.php').subscribe(
           (results) => {
-
               this.categories = results.categories;
-
-          }
-      );
-
+          });
       this.reloadMeals();
   }
-
 }
