@@ -1,3 +1,13 @@
+<ul class="nav nav-pills">
+
+  <li class="nav-item">
+    <a class="nav-link active" href="#">All</a>
+  </li>
+  <li class="nav-item" *ngFor="let category of categories">
+    <a class="nav-link" routerLink="/home/{{category.strCategory}}" (click)="reloadMeals()">{{category.strCategory}}</a>
+  </li>
+</ul>
+
 <div class="card-deck">
     <app-meal [meal]="g" *ngFor="let g of homeMeal"></app-meal>
 </div>

@@ -14,8 +14,11 @@ import { FavoritesComponent } from './favorites/favorites.component';
 import { FilterPipe } from './filter.pipe';
 import { AddRecipeComponent } from './add-recipe/add-recipe.component';
 
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
+
 const appRoutes: Routes= [
     {path: '', redirectTo: 'home', pathMatch: 'full'},
+    {path: 'home/:id', component: HomeComponent},
     {path: 'home', component: HomeComponent},
     {path: 'favorites', component: FavoritesComponent},
     {path: 'addRecipe', component: AddRecipeComponent},
@@ -36,6 +39,7 @@ const appRoutes: Routes= [
   imports: [
     BrowserModule,
       HttpClientModule,
+      Ng2SearchPipeModule,
       FormsModule,
       RouterModule.forRoot(
 		  appRoutes,
