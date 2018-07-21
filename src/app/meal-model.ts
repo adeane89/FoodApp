@@ -49,5 +49,4 @@ export class MealModel {
     strMeasure19: string;
     strMeasure20: string;
     strSource: string;
-    addRecipe?: AddRecipeModel[];
 }

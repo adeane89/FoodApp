@@ -1,9 +1,8 @@
-<div class="card" style="width: 18rem">
+<div class="card" style="width: 20rem">
   <img class="card-img-top mx-auto" src="{{meal.strMealThumb}}" alt="{{meal.strMeal}}">
   <div class="card-body">
-      <h5 class ="card-title">{{meal.strMeal}}</h5>
-        <p class="card-text">Category: {{meal.strCategory}}</p>
-        <p class="card-text">{{meal.strInstructions}}</p>
+      <h5 class ="card-title" style="text-align: center">{{meal.strMeal}}</h5>
+       <app-tabs [meal]="meal"></app-tabs>
   </div>
-    <button class="btn btn-secondary" *ngIf="!pushed" (click)="addToCart()">Add to Favs</button>
+    <button class="btn btn-secondary" *ngIf="!pushed" (click)="addToCart()">Add to Favorites</button>
 </div>

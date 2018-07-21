@@ -15,6 +15,7 @@ import { FilterPipe } from './filter.pipe';
 import { AddRecipeComponent } from './add-recipe/add-recipe.component';
 
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { TabsComponent } from './tabs/tabs.component';
 
 const appRoutes: Routes= [
     {path: '', redirectTo: 'home', pathMatch: 'full'},
@@ -34,7 +35,8 @@ const appRoutes: Routes= [
     NotFoundComponent,
     FavoritesComponent,
     FilterPipe,
-    AddRecipeComponent
+    AddRecipeComponent,
+    TabsComponent
   ],
   imports: [
     BrowserModule,
