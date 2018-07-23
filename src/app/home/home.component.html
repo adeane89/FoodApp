@@ -1,12 +1,41 @@
-<ul class="nav nav-pills">
-  <li class="nav-item">
-    <a class="nav-link active" href="#">All</a>
-  </li>
-  <li class="nav-item" *ngFor="let category of categories">
-    <a class="nav-link" routerLink="/home/{{category.strCategory}}" (click)="reloadMeals()">{{category.strCategory}}</a>
-  </li>
-</ul>
+<div>
+    <ul class="nav nav-pills" style="justify-content:center; margin: 10px;">
+      <li class="nav-item" style=" padding-left: 2px; padding-right: 2px;" *ngFor="let category of categories">
+        <button type="button" class="btn btn-outline-dark" routerLink="/home/{{category.strCategory}}" (click)="reloadMeals()">{{category.strCategory}}</button>
+      </li>
+    </ul>
+<div *ngIf="show" id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+  <ol class="carousel-indicators">
+    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+  </ol>
+  <div class="carousel-inner" style="text-align: center; align-content: center">
+    <div class="carousel-item active">
+        <h5>Crock Pot Chicken Baked Tacos</h5>
+      <img class="d-block" src="https:\/\/www.themealdb.com\/images\/media\/meals\/ypxvwv1505333929.jpg" alt="First slide">
+    </div>
+    <div class="carousel-item">
+         <h5>Carrot Cake</h5>
+      <img class="d-block" src="https:\/\/www.themealdb.com\/images\/media\/meals\/vrspxv1511722107.jpg" alt="Second slide">
+    </div>
+    <div class="carousel-item">
+             <h5>Prawn & Fennel Bisque</h5>
+      <img class="d-block" src="https:\/\/www.themealdb.com\/images\/media\/meals\/rtwwvv1511799504.jpg" alt="Third slide">
+    </div>
+  </div>
+  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
 
 <div class="card-deck">
     <app-meal [meal]="g" *ngFor="let g of homeMeal"></app-meal>
 </div>
+</div>
+

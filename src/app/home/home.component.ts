@@ -17,6 +17,7 @@ export class HomeComponent implements OnInit {
     homeMeal: MealModel[];
     meal: MealModel;
     categories;
+    show: boolean=false;
 
 
   constructor(private httpClient: HttpClient, private route: ActivatedRoute, private location: Location) {
@@ -26,9 +27,7 @@ export class HomeComponent implements OnInit {
         let id = this.route.snapshot.paramMap.get('id');
         if(id){
             this.httpClient.get('https://www.themealdb.com/api/json/v1/1/filter.php?c=' + id).subscribe((results: any) => { this.homeMeal = results.meals; });
-        } else {
-            this.httpClient.get<MealModel[]>('./assets/meal.json').subscribe((results) => { this.homeMeal = results; });
-        }
+        } this.show = !this.show;
     }
 
   ngOnInit() {

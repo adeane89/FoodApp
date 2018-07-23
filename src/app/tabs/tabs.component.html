@@ -5,11 +5,8 @@
 	<li class="nav-item">
 		<button  class="btn btn-outline-secondary btn-sm" (click)="setTab(2)"  [class.active]="tab === 2" >Ingredients</button>
 	</li>
-	<li class="nav-item">
-		<button  class="btn btn-outline-secondary btn-sm" (click)="setTab(3)"  [class.active]="tab === 3" >Measurements</button>
-	</li>
     <li class="nav-item">
-		<button  class="btn btn-outline-secondary btn-sm" (click)="setTab(4)"  [class.active]="tab === 4" >Instructions</button>
+		<button  class="btn btn-outline-secondary btn-sm" (click)="setTab(3)"  [class.active]="tab === 3" >Instructions</button>
 	</li>
 </ul>
 <div *ngIf="tab === 1">
@@ -19,15 +16,10 @@
 </div>
 <div *ngIf="tab === 2">
     <div *ngIf="show">
-         <p class="card-text">{{meal.strIngredient1}}<br>{{meal.strIngredient2}}<br>{{meal.strIngredient3}}<br>{{meal.strIngredient4}}<br>{{meal.strIngredient5}}<br>{{meal.strIngredient6}}<br>{{meal.strIngredient7}}<br>{{meal.strIngredient8}}<br> {{meal.strIngredient9}}<br>{{meal.strIngredient10}}<br>{{meal.strIngredient11}}<br>{{meal.strIngredient12}}<br>{{meal.strIngredient13}}<br>{{meal.strIngredient14}}<br>{{meal.strIngredient15}}<br>{{meal.strIngredient16}}<br>{{meal.strIngredient17}}<br>{{meal.strIngredient18}}<br>{{meal.strIngredient19}}<br>{{meal.strIngredient20}}<br></p>
+         <p class="card-text">{{meal.strIngredient1}}   {{meal.strMeasure1}}<br>{{meal.strIngredient2}}   {{meal.strMeasure2}}<br>{{meal.strIngredient3}}   {{meal.strMeasure3}}<br>{{meal.strIngredient4}}   {{meal.strMeasure4}}<br>{{meal.strIngredient5}}  {{meal.strMeasure5}}<br>{{meal.strIngredient6}}   {{meal.strMeasure6}}<br>{{meal.strIngredient7}}   {{meal.strMeasure7}}<br>{{meal.strIngredient8}}   {{meal.strMeasure8}}<br>{{meal.strIngredient9}}   {{meal.strMeasure9}}<br>{{meal.strIngredient10}}  {{meal.strMeasure10}}<br>{{meal.strIngredient11}}   {{meal.strMeasure11}}<br>{{meal.strIngredient12}}   {{meal.strMeasure12}}<br>{{meal.strIngredient13}}   {{meal.strMeasure13}}<br>{{meal.strIngredient14}}   {{meal.strMeasure14}}<br>{{meal.strIngredient15}}  {{meal.strMeasure15}}<br>{{meal.strIngredient16}}   {{meal.strMeasure16}}<br>{{meal.strIngredient17}}   {{meal.strMeasure17}}<br>{{meal.strIngredient18}}   {{meal.strMeasure18}}<br>{{meal.strIngredient19}}   {{meal.strMeasure19}}<br>{{meal.strIngredient20}}  {{meal.strMeasure20}}<br></p>
      </div>
 </div>
 <div *ngIf="tab === 3">
-    <div *ngIf="show">
-        <p class="card-text">{{meal.strMeasure1}}<br>{{meal.strMeasure2}}<br>{{meal.strMeasure3}}<br>{{meal.strMeasure4}}<br>{{meal.strMeasure5}}<br>{{meal.strMeasure6}}<br>{{meal.strMeasure7}}<br>{{meal.strMeasure8}}<br>{{meal.strMeasure9}}<br>{{meal.strMeasure10}}<br>{{meal.strMeasure11}}<br>{{meal.strMeasure12}}<br>{{meal.strMeasure13}}<br>{{meal.strMeasure14}}<br>{{meal.strMeasure15}}<br>{{meal.strMeasure16}}<br>{{meal.strMeasure17}}<br>{{meal.strMeasure18}}<br>{{meal.strMeasure19}}<br>{{meal.strMeasure20}}</p>
-    </div>
-</div>
-<div *ngIf="tab === 4">
     <div *ngIf="show">
 	   <p class="card-text">{{meal.strInstructions}}</p>
     </div>

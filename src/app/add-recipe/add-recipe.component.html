@@ -1,22 +1,51 @@
+<!--Existing Recipes-->
+<div *ngFor="let recipe of newRecipe">
+    <div class="row">
+        <div class="col-2">
+            <header>{{addRecipe.mealName}}</header>
+            <p class="mb-0">{{addRecipe.instructions}}</p>
+        </div>
+        <div class="col-8">
+                <p class="mb-0">{{addRecipe.instructions}}</p>
+                <footer class="blockquote-footer"><cite>{{addRecipe.creator}}</cite></footer>
+        </div>
+        <div class="col-2">
+            <p class="mb-0">{{addRecipe.instructions}}</p>
+        </div>
+    </div>
+</div>
+
+
+<!--Add recipe-->
+<h1 style="text-align: center; margin: 10px"> -- Add a recipe -- </h1>
 <div class="row">
 	<div class="col-2">
+           <blockquote class="blockquote">
+           <h2><strong>{{newRecipe.mealName}}</strong></h2>
+            <p class="mb-0">{{newRecipe.ingredients}}</p>
+        </blockquote>
 	</div>
     <div class="col-8">
             <blockquote class="blockquote">
-                <p class="mb-0">{{newRecipe.ingredients}}</p>
                 <p class="mb-0">{{newRecipe.instructions}}</p>
-                <footer class="blockquote-footer"><cite>{{newRecipe.creator}}</cite></footer>
             </blockquote>
     </div>
+    <div class="col-2">
+            <footer class="blockquote-footer"><cite>{{newRecipe.creator}}</cite></footer>
+    </div>
 </div>
-<form (ngSubmit)="submitClicked(); reviewForm.reset()" #reviewForm="ngForm">
-	<div *ngIf="reviewForm.invalid && email.touched && instructions.touched && ingredients.touched" class="alert alert-danger">
+
+<form class="form" (ngSubmit)="submitClicked(); reviewForm.reset()" #reviewForm="ngForm">
+	<div *ngIf="reviewForm.invalid && email.touched && instructions.touched && ingredients.touched && mealName.touched" class="alert alert-danger">
 		<ul>
             <li *ngIf="email.errors && email.errors.required">
                 Email is required.
             </li>
 			<li *ngIf="email.errors && email.errors.pattern">
                 Email is not formatted correctly.
+            </li>
+            <li *ngIf="mealName.errors && mealName.errors.required">
+                Recipe name is required.
             </li>
             <li *ngIf="ingredients.errors && ingredients.errors.required">
                 Ingredients are required.
@@ -36,16 +65,23 @@
 		</div>
 
 	</div>
+    <div class="form-group">
+        <label for="mealName">Recipe Name</label>
+        <textarea class="form-control" placeholder="Enter the recipe name" name="mealName" [(ngModel)]="newRecipe.mealName" required #mealName ="ngModel" [class.is-valid]="mealName.valid" [class.is-invalid]="mealName.invalid && mealName.touched"></textarea>
+		<div class="invalid-feedback">
+			Recipe name is required.
+		</div>
+    </div>
      <div class="form-group">
         <label for="ingredients">Ingredients</label>
-        <textarea class="form-control" placeholder="Enter the ingredients" name="ingredients" [(ngModel)]="newRecipe.ingredients" required #ingredients="ngModel" [class.is-valid]="body.valid" [class.is-invalid]="ingredients.invalid && ingredients.touched" maxlength="500"></textarea>
+        <textarea class="form-control" placeholder="Enter the ingredients" name="ingredients" [(ngModel)]="newRecipe.ingredients" required #ingredients="ngModel" [class.is-valid]="ingredients.valid" [class.is-invalid]="ingredients.invalid && ingredients.touched"></textarea>
 		<div class="invalid-feedback">
 			Ingredients are required.
 		</div>
     </div>
     <div class="form-group">
         <label for="instructions">Instructions</label>
-        <textarea class="form-control" placeholder="Enter the instructions" name="instructions" [(ngModel)]="newRecipe.instructions" required #instructions="ngModel" [class.is-valid]="body.valid" [class.is-invalid]="instructions.invalid && instructions.touched" maxlength="500"></textarea>
+        <textarea class="form-control" placeholder="Enter the instructions" name="instructions" [(ngModel)]="newRecipe.instructions" required #instructions="ngModel" [class.is-valid]="instructions.valid" [class.is-invalid]="instructions.invalid && instructions.touched"></textarea>
 		<div class="invalid-feedback">
 			Instructions are required.
 		</div>

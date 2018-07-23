@@ -1,0 +1,9 @@
+.carousel-inner img {
+  margin: auto;
+    width: 40%;
+    border-radius: 20px;
+}
+
+.carousel{
+  interval: 1000;
+}

@@ -15,5 +15,4 @@ export class NavbarComponent implements OnInit {
   ngOnInit() {
       this.favorites = this.favoritesService.favorites;
   }
-
 }

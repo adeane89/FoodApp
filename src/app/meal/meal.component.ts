@@ -23,7 +23,7 @@ export class MealComponent implements OnInit {
       console.log(this.meal.idMeal)
       this.httpClient.get('https://www.themealdb.com/api/json/v1/1/lookup.php?i=' + this.meal.idMeal).subscribe((results: any) =>{
           this.meal = results.meals[0];
-      })
+      });
   }
 pushed: boolean = false;
 
